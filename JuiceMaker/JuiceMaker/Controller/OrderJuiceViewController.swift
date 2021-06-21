@@ -14,13 +14,13 @@ class OrderJuiceViewController: UIViewController {
     @IBOutlet weak var pineappleStock: UILabel!
     @IBOutlet weak var kiwiStock: UILabel!
     @IBOutlet weak var mangoStock: UILabel!
-    @IBOutlet weak var touchBananaJuice: UIButton!
-    @IBOutlet weak var touchStrawberryBananaJuice: UIButton!
-    @IBOutlet weak var tocuhStrawberryJuice: UIButton!
-    @IBOutlet weak var touchPineaplleJuice: UIButton!
-    @IBOutlet weak var touchMangoKiwiJuice: UIButton!
-    @IBOutlet weak var touchKiwiJuice: UIButton!
-    @IBOutlet weak var touchMangoJuice: UIButton!
+    @IBOutlet weak var bananaJuiceButtonTouch: UIButton!
+    @IBOutlet weak var strawberryBananaJuiceButtonTouch: UIButton!
+    @IBOutlet weak var strawberryJuiceButtonTouch: UIButton!
+    @IBOutlet weak var pineaplleJuiceButtonTouch: UIButton!
+    @IBOutlet weak var kiwiMangoJuiceButtonTouch: UIButton!
+    @IBOutlet weak var kiwiJuiceButtonTouch: UIButton!
+    @IBOutlet weak var mangoJuiceButtonTouch: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,25 +39,27 @@ class OrderJuiceViewController: UIViewController {
     @IBAction func touchUpModifyStock(_ sender: UIBarButtonItem) {
         guard let moveIntoModifyStock = self.storyboard?.instantiateViewController(withIdentifier: "storage") else { return }
         self.navigationController?.pushViewController(moveIntoModifyStock, animated: true)
+//        self.present(moveIntoModifyStock, animated: true, completion: nil)
+
     }
     
     @IBAction func touchUpJuiceMenu(_ sender: UIButton) {
         var selectMenu: JuiceMenu?
     
         switch sender {
-        case touchBananaJuice:
+        case bananaJuiceButtonTouch:
             selectMenu = .bananaJuice
-        case touchStrawberryBananaJuice:
+        case strawberryBananaJuiceButtonTouch:
             selectMenu = .strawberryBananaJuice
-        case tocuhStrawberryJuice:
+        case strawberryJuiceButtonTouch:
             selectMenu = .strawberryJuice
-        case touchPineaplleJuice:
+        case pineaplleJuiceButtonTouch:
             selectMenu = .pineappleJuice
-        case touchMangoKiwiJuice:
+        case kiwiMangoJuiceButtonTouch:
             selectMenu = .mangoKiwiJuice
-        case touchKiwiJuice:
+        case kiwiJuiceButtonTouch:
             selectMenu = .kiwiJuice
-        case touchMangoJuice:
+        case mangoJuiceButtonTouch:
             selectMenu = .mangoJuice
         default:
             print("알수없는 버튼입니다.")
